@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace LocalExecuter.lib
 {
@@ -22,6 +24,22 @@ namespace LocalExecuter.lib
             }
             else { }
         }
+        public static void CreateRunnerFileContents(string RunnerName, string RunnerStartScript)
+        {
+            string RunnerDIR = $"{dir}\\{RunnerName}.json";
+
+            var runnerData = new RunnerData
+            {
+                RunnerName = RunnerName,
+                RunnerSS = RunnerStartScript
+            };
+
+            string JSONData = JsonSerializer.Serialize(runnerData);
+            string JSONDataFormated = $"{JSONData}\n";
+
+            File.AppendAllText(RunnerDIR, JSONDataFormated);
+
+        }
         public static void CreateRunnerFile(string RunnerName)
         {
             CreateMainDirectoryForStorage();
@@ -34,5 +52,10 @@ namespace LocalExecuter.lib
                 MessageBox.Show("The runner file already exists!", "Local Executer", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+    }
+    public class RunnerData
+    {
+        public string RunnerName { get; set; }
+        public string RunnerSS { get; set; }
     }
 }
