@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace LocalExecuter.lib
 {
@@ -10,7 +11,8 @@ namespace LocalExecuter.lib
     {
         public static void IfDirectoryDoesntExistDo(string path)
         {
-            if()
+            if(!Directory.Exists(path))
+            { }
         }
     }
 }

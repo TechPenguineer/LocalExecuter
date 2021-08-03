@@ -31,6 +31,8 @@ namespace LocalExecuter.views
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.runnerName = new System.Windows.Forms.TextBox();
+            this.createRunner = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -42,12 +44,34 @@ namespace LocalExecuter.views
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
             // 
+            // runnerName
+            // 
+            this.runnerName.Location = new System.Drawing.Point(107, 112);
+            this.runnerName.Name = "runnerName";
+            this.runnerName.Size = new System.Drawing.Size(350, 22);
+            this.runnerName.TabIndex = 1;
+            // 
+            // createRunner
+            // 
+            this.createRunner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(199)))), ((int)(((byte)(70)))));
+            this.createRunner.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createRunner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.createRunner.Location = new System.Drawing.Point(107, 155);
+            this.createRunner.Name = "createRunner";
+            this.createRunner.Size = new System.Drawing.Size(350, 46);
+            this.createRunner.TabIndex = 2;
+            this.createRunner.Text = "Create";
+            this.createRunner.UseVisualStyleBackColor = false;
+            this.createRunner.Click += new System.EventHandler(this.createRunner_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.createRunner);
+            this.Controls.Add(this.runnerName);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
@@ -56,11 +80,14 @@ namespace LocalExecuter.views
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox runnerName;
+        private System.Windows.Forms.Button createRunner;
     }
 }

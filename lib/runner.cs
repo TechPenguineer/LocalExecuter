@@ -17,7 +17,8 @@ namespace LocalExecuter.lib
         {
             if(!Directory.Exists(dir))
             {
-                Directory.CreateDirectory(dir);
+                DirectoryInfo di = Directory.CreateDirectory(dir);
+                di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
             }
             else { }
         }

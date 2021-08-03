@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LocalExecuter.lib;
 
 namespace LocalExecuter.views
 {
@@ -15,6 +16,12 @@ namespace LocalExecuter.views
         public Home()
         {
             InitializeComponent();
+        }
+
+        private void createRunner_Click(object sender, EventArgs e)
+        {
+           string name = runnerName.Text;
+           runner.CreateRunnerFile(name);
         }
     }
 }
